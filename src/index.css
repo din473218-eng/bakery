@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FFF8F1;
+  --color-chocolate: #4E342E;
+  --color-coffee: #D7CCC8;
+  --color-gold: #C8A96A;
+  --color-darkbrown: #2D1E1B;
+  
+  --font-sans: "Inter", "Cairo", system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Amiri", serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
+  --radius-2xl: 2px;
+  --radius-3xl: 2px;
+  --radius-full: 2px;
+}
+
+/* Custom Base Layer & Styles */
+body {
+  background-color: #FFF8F1;
+  color: #2D1E1B;
+  font-family: var(--font-serif);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F1;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8A96A;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4E342E;
+}
+
+/* Custom Utilities for Luxury Editorial Aesthetic */
+.luxury-shadow {
+  box-shadow: 0 4px 20px rgba(78, 52, 46, 0.04);
+}
+
+.gold-gradient-text {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: #C8A96A;
+}
+
+.gold-gradient-bg {
+  background: #C8A96A;
+}
+
+.chocolate-gradient-bg {
+  background: #4E342E;
+}
+
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(78, 52, 46, 0.12);
+}
+
+.glass-card-dark {
+  background: #4E342E;
+  color: #FFF8F1;
+  border: 1px solid rgba(200, 169, 106, 0.35);
+}
+
+/* Base button and input styling force to sharp-rounded edge */
+button, input, textarea, select, a.btn, .badge {
+  border-radius: 2px !important;
+}
+
+/* Micro thin editorial divider */
+.editorial-divider {
+  border-color: rgba(78, 52, 46, 0.1);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-fast {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Custom typography stylings for RTL support */
+[dir="rtl"] .font-serif {
+  font-family: "Amiri", "Playfair Display", serif;
+}
+[dir="rtl"] .font-sans {
+  font-family: "Cairo", "Inter", sans-serif;
+}
